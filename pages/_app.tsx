@@ -1,14 +1,12 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import InputWordProvider from 'utils/context/word_input.context';
+import ContextWrapper from 'utils/context/context_wrapper.component';
 
 const App: (props: AppProps) => JSX.Element = ({ Component, pageProps }) => {
 	return (
-		<>
-			<InputWordProvider>
-				<Component {...pageProps} />
-			</InputWordProvider>
-		</>
+		<ContextWrapper>
+			<Component {...pageProps} />
+		</ContextWrapper>
 	);
 };
 
